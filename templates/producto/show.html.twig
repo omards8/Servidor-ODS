@@ -1,0 +1,54 @@
+{% extends 'contact.html.twig' %}
+
+{% block title %}Producto{% endblock %}
+
+{% block body %}
+    <h1>Producto</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ producto.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ producto.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Procesador</th>
+                <td>{{ producto.procesador }}</td>
+            </tr>
+            <tr>
+                <th>Pantalla</th>
+                <td>{{ producto.pantalla }}</td>
+            </tr>
+            <tr>
+                <th>Camara</th>
+                <td>{{ producto.camara }}</td>
+            </tr>
+            <tr>
+                <th>Bateria</th>
+                <td>{{ producto.bateria }}</td>
+            </tr>
+            <tr>
+                <th>Imagen</th>
+                <td>{{ producto.imagen }}</td>
+            </tr>
+            <tr>
+                <th>Conectividad</th>
+                <td>{{ producto.conectividad }}</td>
+            </tr>
+            <tr>
+                <th>Tipo</th>
+                <td>{{ producto.tipo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('producto_index') }}">back to list</a>
+
+    <a href="{{ path('producto_edit', {'id': producto.id}) }}">edit</a>
+
+    {{ include('producto/_delete_form.html.twig') }}
+{% endblock %}
